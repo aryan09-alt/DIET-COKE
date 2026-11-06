@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diet Coke – Fan Made Experience</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="ld-text">
+      <span class="ld-out">DIET COKE</span>
+      <span class="ld-fill" id="ldFill">DIET COKE</span>
+    </div>
+    <div class="ld-pct" id="ldPct">0%</div>
+  </div>
+
+  <div class="top-prog" id="topProg"></div>
+  <div class="cursor" id="cursor"><span id="curLabel"></span></div>
+  <canvas id="fx"></canvas>
+
+  <nav>
+    <div class="brand">DIET <b>COKE</b></div>
+    <a href="#top">Home</a>
+    <a href="#story">Story</a>
+    <a href="#flavors">Flavors</a>
+    <a href="#credits">Credits</a>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <header class="hero" id="top">
+    <div class="hero-glow"></div>
+
+    <div class="giant" id="giant">
+      <div class="line" data-text="DIET"></div>
+      <div class="line red" data-text="COKE"></div>
+    </div>
+
+    <div class="side l">JUST FOR THE TASTE</div>
+    <div class="side r">ZERO SUGAR · ICE COLD</div>
+
+    <div class="hero-can" id="heroCan" data-cursor="DRAG">
+      <div class="can-tilt" id="heroTilt">
+        <div class="can-float">
+          <div class="can-mount" id="heroMount"></div>
+        </div>
+      </div>
+      <div class="can-shadow"></div>
+    </div>
+
+    <p class="hero-copy">Drag the can to spin it &nbsp;·&nbsp; Click it to pop it</p>
+    <div class="scroll-cue"><span>SCROLL</span><i></i></div>
+  </header>
+
+  <!-- ================= MARQUEE (crossing) ================= -->
+  <div class="mq-wrap">
+    <div class="marquee m1" data-rot="-2.5"><div class="track"></div></div>
+    <div class="marquee m2" data-rot="2.5"><div class="track"></div></div>
+  </div>
+
+  <!-- ================= STORY ================= -->
+  <section class="story" id="story">
+    <div class="sticky" id="sticky">
+      <canvas id="storyFx"></canvas>
+      <div class="wm" id="wm">01</div>
+      <div class="wave" id="wave"></div>
+
+      <div class="story-can" id="storyCan"><div id="storyMount"></div></div>
+
+      <article class="chapter L" data-mode="fizz" data-bg="#0b0c10" data-glow="#e4002b">
+        <div class="tag">01 — CRACK</div>
+        <h3 class="split" data-t="Pop.|Hiss."></h3>
+        <p>That first sound. The tab lifts, the fizz wakes up and the whole room knows something good just started.</p>
+      </article>
+
+      <article class="chapter R" data-mode="snow" data-bg="#07213a" data-glow="#37b6ff">
+        <div class="tag">02 — CHILL</div>
+        <h3 class="split" data-t="Ice|cold."></h3>
+        <p>Straight from the fridge. Frost on the metal, a bite in every sip and zero chance of a slow afternoon.</p>
+      </article>
+
+      <article class="chapter L" data-mode="rings" data-bg="#2a0009" data-glow="#ff1744">
+        <div class="tag">03 — ZERO</div>
+        <h3 class="split" data-t="Zero|sugar."></h3>
+        <p>All the crisp taste you love, none of the sugar. Pure fizz, pure focus, pure refresh.</p>
+      </article>
+
+      <article class="chapter R" data-mode="bubbles" data-bg="#1a1c23" data-glow="#c9ced9">
+        <div class="tag">04 — SIP</div>
+        <h3 class="split" data-t="Light.|Bold.|Yours."></h3>
+        <p>Clean, sharp and ridiculously easy to drink. One sip and you are already reaching for the next.</p>
+      </article>
+
+      <article class="chapter C" data-mode="confetti" data-bg="#e4002b" data-glow="#ffffff">
+        <div class="tag">05 — REPEAT</div>
+        <h3 class="split" data-t="ONE MORE?"></h3>
+        <p>Of course. Scroll back up and do it all over again.</p>
+      </article>
+
+      <div class="dots" id="dots"></div>
+      <div class="counter"><b id="cnt">01</b> / 05</div>
+      <div class="bar"><i id="bar"></i></div>
+    </div>
+  </section>
+
+  <!-- ================= FLAVORS ================= -->
+  <section class="flavors" id="flavors">
+    <h2 class="title rv">Pick your<br><span>vibe.</span></h2>
+    <p class="sub rv">Hover a can and move your mouse to spin it.</p>
+
+    <div class="grid">
+      <div class="fwrap rv">
+        <div class="fcard" data-accent="#e4002b" style="--c:#e4002b;--rgb:228,0,43">
+          <div class="can-mount"></div><h4>Classic</h4><p>Crisp and clean</p>
+        </div>
+      </div>
+      <div class="fwrap rv">
+        <div class="fcard" data-accent="#1fae3d" style="--c:#1fae3d;--rgb:31,174,61">
+          <div class="can-mount"></div><h4>Lime</h4><p>Fresh and zesty</p>
+        </div>
+      </div>
+      <div class="fwrap rv">
+        <div class="fcard" data-accent="#a80f38" style="--c:#a80f38;--rgb:168,15,56">
+          <div class="can-mount"></div><h4>Cherry</h4><p>A little sweet attitude</p>
+        </div>
+      </div>
+      <div class="fwrap rv">
+        <div class="fcard" data-accent="#e39a00" style="--c:#e39a00;--rgb:227,154,0">
+          <div class="can-mount"></div><h4>Ginger</h4><p>Extra kick</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="stats">
+    <div class="stat rv"><b data-to="0">0</b><small>GRAMS OF SUGAR</small></div>
+    <div class="stat rv"><b data-to="100" data-suf="%">0</b><small>FIZZ</small></div>
+    <div class="stat rv"><b data-to="24" data-suf="/7">0</b><small>CHILL</small></div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="credits">
+    <div class="stay" aria-hidden="true">STAY FIZZY</div>
+    <div class="made rv">THIS WEBSITE WAS CREATED BY</div>
+    <div class="names rv">
+      <span class="n" id="c1">…</span><span class="amp">&amp;</span><span class="n" id="c2">…</span>
+    </div>
+    <button class="pop-btn rv" id="popBtn" data-cursor="POP">POP A CAN</button>
+    <div class="disc rv">Fan-made practice project. Not affiliated with, endorsed by, or connected to The Coca-Cola Company. All trademarks belong to their respective owners.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
